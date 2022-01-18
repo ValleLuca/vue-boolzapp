@@ -3,3 +3,150 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: rgba(210,214,209,255);
+}
+
+#bGreen {
+    background-color: rgba(0,124,127,255);
+    height: 100px;
+    width: 100vw;
+    position: absolute;
+    z-index: 0;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+}
+
+
+#container {
+    width: 100%;
+}
+
+#BoolzappChat {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.chatUtenti, #BoolzappChat, #parteAltaChat, #paddingProfiloUtente::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#contatti {
+    width: 40%;
+    height: auto;
+    float: left;
+    position: relative;
+    top: 0;
+    left: 0%;
+}
+
+#chat {
+    width: 60%;
+    height: auto;
+    float: right;
+    position: relative;
+    top: 0;
+    left: 0%;
+}   
+
+#profiloUtente, #parteAltaChat{
+    width: 100%;
+    background-color: rgba(231,231,231,255);
+
+}
+
+#paddingProfiloUtente{
+    padding: 10px;
+}
+
+.imgAvatarUtente{
+    height: 30px;
+    width: auto;
+    margin-left: 2%;
+    vertical-align: middle;
+}
+
+#testoProfilo{
+    margin-left: 2%;
+}
+
+#imgeprofile {
+    float: left;
+    width: 70%;
+}
+
+#iconeUtene {
+    float: right;
+    width: 30%;
+    text-align: center;
+}
+
+.pIcons{
+    margin-left: 1%;
+    vertical-align: middle;
+}
+
+.chatUtenti{
+    background-color: white;
+    min-height: 400px;
+}
+
+.chatUtenti {
+    width: 100%;
+}
+
+.listaAvatarUtenti{
+    float: left;
+    width: 20%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.previewChat{
+    float: right;
+    width: 70%;
+    text-align: center;  
+}
+
+.padingImg{
+    padding: 2%;
+}
+
+.bordoChat{
+    border: 2px solid lightgrey;
+}
+
+#parteAltaChat{
+    border-left: 1px solid lightgrey;
+}
+
+.spazioAvatar{
+    float: left;
+    width: 20%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.infoUtenteChat{
+    float: left;
+    width: 50%;
+    text-align: center; 
+}
+
+#opzioniChat{
+    float: left;
+    width: 30%;
+}
+
+#sfondochat{
+    background-color: lightseagreen;
+    min-height: 400px;
+    width: auto;
+}
