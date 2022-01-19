@@ -35,18 +35,21 @@
                         </div>
                     </div>
                     <!-- chat sinistra con le chat aperte -->
-                    <div>
+                    <div class="chatUtenti">
                         <div v-for="(datiUtente, index) in datiUtentiChat">
-                            <div class="chatUtenti bordoChat">
+                            <div class="clearfix bordoChat">
                                 <div class="listaAvatarUtenti padingImg">
-                                    <img :src="datiUtente.avatar" class="imgAvatarUtente">
+                                    <img :src="img/avatar{{datiUtente.avatar}}.png" class="imgAvatarUtente">  <!--da sistemare-->
                                 </div>
                                 <div class="previewChat">
-                                    <h3>{{ datiUtente.utente }}</h3>
-                                    <p>{{ datiUtente.rispostaDue }}</p>
+                                    <h3>{{ datiUtente.name }}</h3>
+                                    <div v-for="TestoChat in datiUtente.messages">
+                                        <p>{{ TestoChat.text }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div id="chat">
