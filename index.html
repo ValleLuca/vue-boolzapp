@@ -36,7 +36,7 @@
                     </div>
                     <!-- chat sinistra con le chat aperte -->
                     <div class="chatUtenti">
-                        <div v-for="(datiUtente, index) in datiUtentiChat">
+                        <div v-for="(datiUtente, index) in datiUtentiChat" @click="contatoreChat = index">
                             <div class="clearfix bordoChat">
                                 <div class="listaAvatarUtenti padingImg">
                                     <img :src="datiUtente.avatar" class="imgAvatarUtente">  <!--da sistemare-->
@@ -70,15 +70,16 @@
                     </div>
                     <!-- chat vera e propria -->
                     <div v-if="contatoreChat != null">
-                        ciao bello
-                    </div>
-                    <div id="sfondochat" class="clearfix">
-                        <div v-for="(elemento, index) in datiUtentiChat[0].messages" >
-                            <div v-if="elemento.status == sent">
-                                <p class="chatRight pChat">{{ elemento.text }}</p>
-                            </div>
-                            <div v-else>
-                                <p class="chatLeft pChat">{{ elemento.text }}</p>
+                        <div id="sfondochat">
+                            <div class="clearfix">
+                                <div v-for="(elemento, index) in datiUtentiChat[0].messages" >
+                                    <div v-if="elemento.status == 'sent'">
+                                        <p class="chatRight pChat">{{ elemento.text }}</p>
+                                    </div>
+                                    <div v-else>
+                                        <p class="chatLeft pChat">{{ elemento.text }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
