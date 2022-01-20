@@ -165,6 +165,12 @@ body{
     border-radius: 5px;
 }
 
+.chatLeft{
+    float: left;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
 .pChat{
     padding: 10px;
 }

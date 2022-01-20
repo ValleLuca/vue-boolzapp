@@ -74,12 +74,12 @@
                     </div>
                     <div id="sfondochat" class="clearfix">
                         <div v-for="(elemento, index) in datiUtentiChat[0].messages" >
-                                <div v-if="elemento.status == sent">
-                                    <p class="chatRight pChat">{{ elemento.text }}</p>
-                                </div>
-                                <div v-else>
-                                    <p class="chatRight pChat">{{ elemento.text }}</p>
-                                </div>
+                            <div v-if="elemento.status == sent">
+                                <p class="chatRight pChat">{{ elemento.text }}</p>
+                            </div>
+                            <div v-else>
+                                <p class="chatLeft pChat">{{ elemento.text }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
