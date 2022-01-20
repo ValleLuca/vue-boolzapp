@@ -119,8 +119,12 @@ body{
 }
 
 .bordoChat{
-    border: 2px solid lightgrey;
     width: 100%;
+}
+
+.bordoChat:hover{
+    cursor: pointer;
+    background-color: lightgray;
 }
 
 #parteAltaChat{
@@ -149,6 +153,7 @@ body{
     background-color: lightseagreen;
     min-height: 400px;
     width: auto;
+    position: relative;
 }
 
 .textOptionH{
@@ -159,18 +164,58 @@ body{
     font-size: 12px;
 }
 
+.widthChat{
+    width: 100%;
+    padding: 10px;
+}
+
 .chatRight{
     float: right;
     background-color: green;
-    border-radius: 5px;
 }
 
 .chatLeft{
     float: left;
     background-color: lightgray;
-    border-radius: 5px;
 }
 
 .pChat{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.zonaInputChat{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: blanchedalmond;
+    width: 100%;
+}
+
+.emoticonLeft, .inputCenter, .sendRight{
+    float: left;
+    text-align: center;
+}
+
+.emoticonLeft{
+    width: 10%;
+}
+
+.inputCenter{
+    width: 80%;
+}
+
+.sendRight{
+    width: 10%;
+}
+
+.opzioniImputText{
+    width: 100%;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.spazioChat{
     padding: 10px;
 }

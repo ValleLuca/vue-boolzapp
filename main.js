@@ -32,17 +32,17 @@ var app = new Vue({
             messages: [
               {
               date: '10/01/2020 15:30:55',
-              text: 'Hai portato a spasso il cane?',
+              text: 'Hai la macchina?',
               status: 'sent'
               },
               {
               date: '10/01/2020 15:50:00',
-              text: 'Ricordati di dargli da mangiare',
+              text: 'Mi raccomando',
               status: 'sent'
               },
               {
               date: '10/01/2020 16:15:22',
-              text: 'Tutto fatto!',
+              text: 'La benzina ce',
               status: 'received'
               }
             ],
@@ -54,21 +54,27 @@ var app = new Vue({
             messages: [
               {
               date: '10/01/2020 15:30:55',
-              text: 'Hai portato a spasso il cane?',
+              text: '123 stella',
               status: 'sent'
               },
               {
               date: '10/01/2020 15:50:00',
-              text: 'Ricordati di dargli da mangiare',
+              text: 'ti ho visto',
               status: 'sent'
               },
               {
               date: '10/01/2020 16:15:22',
-              text: 'Tutto fatto!',
+              text: 'Ma come hai fatto?',
               status: 'received'
               }
             ],
           },
         ]
+
+    },
+    methods:{
+      sceltaChat: function(indice){
+        this.contatoreChat = indice;
+      }
     }
   })

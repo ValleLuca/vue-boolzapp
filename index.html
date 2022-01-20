@@ -36,20 +36,19 @@
                     </div>
                     <!-- chat sinistra con le chat aperte -->
                     <div class="chatUtenti">
-                        <div v-for="(datiUtente, index) in datiUtentiChat" @click="contatoreChat = index">
+                        <div v-for="(datiUtente, index) in datiUtentiChat" @click="sceltaChat(index)">
                             <div class="clearfix bordoChat">
                                 <div class="listaAvatarUtenti padingImg">
                                     <img :src="datiUtente.avatar" class="imgAvatarUtente">  <!--da sistemare-->
                                 </div>
                                 <div class="previewChat">
                                     <h3 class="textOptionH">{{ datiUtente.name }}</h3>
-                                    <div v-for="TestoChat in datiUtente.messages">
-                                        <p class="testoOptionP">{{ TestoChat.text }}</p>
+                                    <div>
+                                        <p class="testoOptionP">{{ datiUtente.messages.at(-1).text }}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
                 <div id="chat">
@@ -69,17 +68,31 @@
                         </div>
                     </div>
                     <!-- chat vera e propria -->
-                    <div v-if="contatoreChat != null">
-                        <div id="sfondochat">
-                            <div class="clearfix">
-                                <div v-for="(elemento, index) in datiUtentiChat[0].messages" >
-                                    <div v-if="elemento.status == 'sent'">
-                                        <p class="chatRight pChat">{{ elemento.text }}</p>
-                                    </div>
-                                    <div v-else>
-                                        <p class="chatLeft pChat">{{ elemento.text }}</p>
+                    
+                    <div id="sfondochat">
+                        <div v-if="contatoreChat != null">
+                            <div v-for="elemento in datiUtentiChat[contatoreChat].messages">  <!-- messaggi -->
+                                <div v-if="elemento.status == 'sent'" class="clearfix widthChat">
+                                    <div class="chatRight pChat">
+                                        <span>{{ elemento.text }}</span>
                                     </div>
                                 </div>
+                                <div v-else class="spazioChat">
+                                    <div class="chatLeft pChat">
+                                        <span >{{ elemento.text }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zonaInputChat clearfix">
+                            <div class="emoticonLeft">
+                                <i class="fa-solid fa-face-grin-wink"></i>
+                            </div>
+                            <div class="inputCenter">
+                                <input class="opzioniImputText" v-model="inputChatUtente">
+                            </div>
+                            <div class="sendRight">
+                                <i class="fa-solid fa-microphone"></i>
                             </div>
                         </div>
                     </div>
