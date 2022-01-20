@@ -112,7 +112,6 @@ body{
 .previewChat{
     float: right;
     width: 70%;
-    text-align: center;  
 }
 
 .padingImg{
@@ -150,4 +149,22 @@ body{
     background-color: lightseagreen;
     min-height: 400px;
     width: auto;
+}
+
+.textOptionH{
+    font-size: 18px;
+}
+
+.testoOptionP{
+    font-size: 12px;
+}
+
+.chatRight{
+    float: right;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.pChat{
+    padding: 10px;
 }

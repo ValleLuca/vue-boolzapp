@@ -1,10 +1,11 @@
 var app = new Vue({
     el: '#app',
     data: {
+      contatoreChat: null,
         datiUtentiChat: [
           {
             name: 'Michele',
-            avatar: '_1',
+            avatar: 'img/avatar_2.jpg',
             visible: true,
             messages: [
               {
@@ -26,7 +27,7 @@ var app = new Vue({
           },
           {
             name: 'Flavio',
-            avatar: '_1',
+            avatar: 'img/avatar_3.jpg',
             visible: true,
             messages: [
               {
@@ -48,7 +49,7 @@ var app = new Vue({
           },
           {
             name: 'Bruno',
-            avatar: '_1',
+            avatar: 'img/avatar_4.jpg',
             visible: true,
             messages: [
               {

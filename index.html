@@ -39,12 +39,12 @@
                         <div v-for="(datiUtente, index) in datiUtentiChat">
                             <div class="clearfix bordoChat">
                                 <div class="listaAvatarUtenti padingImg">
-                                    <img :src="img/avatar{{datiUtente.avatar}}.png" class="imgAvatarUtente">  <!--da sistemare-->
+                                    <img :src="datiUtente.avatar" class="imgAvatarUtente">  <!--da sistemare-->
                                 </div>
                                 <div class="previewChat">
-                                    <h3>{{ datiUtente.name }}</h3>
+                                    <h3 class="textOptionH">{{ datiUtente.name }}</h3>
                                     <div v-for="TestoChat in datiUtente.messages">
-                                        <p>{{ TestoChat.text }}</p>
+                                        <p class="testoOptionP">{{ TestoChat.text }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -69,15 +69,24 @@
                         </div>
                     </div>
                     <!-- chat vera e propria -->
-                    <div id="sfondochat">
-                        
+                    <div v-if="contatoreChat != null">
+                        ciao bello
+                    </div>
+                    <div id="sfondochat" class="clearfix">
+                        <div v-for="(elemento, index) in datiUtentiChat[0].messages" >
+                                <div v-if="elemento.status == sent">
+                                    <p class="chatRight pChat">{{ elemento.text }}</p>
+                                </div>
+                                <div v-else>
+                                    <p class="chatRight pChat">{{ elemento.text }}</p>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
 
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="main.js"></script>
 </body>
