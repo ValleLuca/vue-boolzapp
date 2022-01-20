@@ -2,6 +2,8 @@ var app = new Vue({
     el: '#app',
     data: {
       contatoreChat: null,
+      inputChatUtente:"",
+      clock: null,
         datiUtentiChat: [
           {
             name: 'Michele',
@@ -75,6 +77,22 @@ var app = new Vue({
     methods:{
       sceltaChat: function(indice){
         this.contatoreChat = indice;
-      }
+      },
+      sendMessage: function(ichat){
+        this.datiUtentiChat[ichat].messages.push({
+          text: 'ok',
+          status: 'received'
+        });
+      },
+
+      addTodo: function(chat) {
+        this.datiUtentiChat[chat].messages.push({
+          text: this.inputChatUtente,
+          status: 'sent'
+        });
+        this.inputChatUtente = "";
+        this.clock = setInterval(this.sendMessage(chat), 1000);
+      },
+
     }
   })

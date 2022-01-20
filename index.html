@@ -34,6 +34,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <div>
+                        
+                    </div>
+
                     <!-- chat sinistra con le chat aperte -->
                     <div class="chatUtenti">
                         <div v-for="(datiUtente, index) in datiUtentiChat" @click="sceltaChat(index)">
@@ -64,7 +69,21 @@
                             </div>
                         </div>
                         <div id="opzioniChat">
-                            ciao
+                            <div class="graficaOpzioniChat">
+                                <div class="pIcons">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="pIcons">
+                                    <i class="fa-solid fa-video"></i>
+                                </div>
+                                <div class="pIcons">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                                <div class="pIcons">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <!-- chat vera e propria -->
@@ -87,9 +106,10 @@
                         <div class="zonaInputChat clearfix">
                             <div class="emoticonLeft">
                                 <i class="fa-solid fa-face-grin-wink"></i>
+                                <i class="fa-solid fa-paperclip"></i>
                             </div>
                             <div class="inputCenter">
-                                <input class="opzioniImputText" v-model="inputChatUtente">
+                                <input class="opzioniImputText" v-model="inputChatUtente" @keyup.enter="addTodo(contatoreChat)" placeholder="Scrivi un messaggio">
                             </div>
                             <div class="sendRight">
                                 <i class="fa-solid fa-microphone"></i>
