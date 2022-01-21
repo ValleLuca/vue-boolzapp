@@ -34,13 +34,14 @@
                             </div>
                         </div>
                     </div>
-
-                    <div>
-                        
-                    </div>
-
                     <!-- chat sinistra con le chat aperte -->
                     <div class="chatUtenti">
+                        <!-- ricerca utenti -->
+                        <div class="ricercaUtenti clearfix">
+                            <div class="pSearchChat">
+                                <input class="opzioniImputText" type="text" placeholder="🔍 Cerca o inizia una nuova chat">
+                            </div>
+                        </div>
                         <div v-for="(datiUtente, index) in datiUtentiChat" @click="sceltaChat(index)">
                             <div class="clearfix bordoChat">
                                 <div class="listaAvatarUtenti padingImg">
@@ -48,6 +49,9 @@
                                 </div>
                                 <div class="previewChat">
                                     <h3 class="textOptionH">{{ datiUtente.name }}</h3>
+                                    <div class="directionpreviewChat">
+                                        <span class="fontDate">{{ datiUtente.messages.at(-1).date }}</span>
+                                    </div>
                                     <div>
                                         <p class="testoOptionP">{{ datiUtente.messages.at(-1).text }}</p>
                                     </div>
@@ -65,7 +69,7 @@
                             </div>
                             <div class="infoUtenteChat">
                                 <h3>pippo</h3>
-                                <p>forse qualche anno fa</p>
+                                <p>{{ datiUtentiChat[0].messages.at(-1).date }}</p>
                             </div>
                         </div>
                         <div id="opzioniChat">
@@ -90,7 +94,7 @@
                     
                     <div id="sfondochat">
                         <div v-if="contatoreChat != null">
-                            <div v-for="elemento in datiUtentiChat[contatoreChat].messages">  <!-- messaggi -->
+                            <div v-for="elemento in datiUtentiChat[contatoreChat].messages">
                                 <div v-if="elemento.status == 'sent'" class="clearfix widthChat">
                                     <div class="chatRight pChat">
                                         <span>{{ elemento.text }}</span>
@@ -121,6 +125,9 @@
         </main>
 
     </div>
+
+    <!-- JS -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="main.js"></script>
 </body>

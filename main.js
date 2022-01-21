@@ -11,17 +11,17 @@ var app = new Vue({
             visible: true,
             messages: [
               {
-              date: '10/01/2020 15:30:55',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'Hai portato a spasso il cane?',
               status: 'sent'
               },
               {
-              date: '10/01/2020 15:50:00',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'Ricordati di dargli da mangiare',
               status: 'sent'
               },
               {
-              date: '10/01/2020 16:15:22',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'Tutto fatto!',
               status: 'received'
               }
@@ -33,17 +33,17 @@ var app = new Vue({
             visible: true,
             messages: [
               {
-              date: '10/01/2020 15:30:55',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'Hai la macchina?',
               status: 'sent'
               },
               {
-              date: '10/01/2020 15:50:00',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'Mi raccomando',
               status: 'sent'
               },
               {
-              date: '10/01/2020 16:15:22',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'La benzina ce',
               status: 'received'
               }
@@ -55,17 +55,17 @@ var app = new Vue({
             visible: true,
             messages: [
               {
-              date: '10/01/2020 15:30:55',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: '123 stella',
               status: 'sent'
               },
               {
-              date: '10/01/2020 15:50:00',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'ti ho visto',
               status: 'sent'
               },
               {
-              date: '10/01/2020 16:15:22',
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
               text: 'Ma come hai fatto?',
               status: 'received'
               }
@@ -81,17 +81,19 @@ var app = new Vue({
       sendMessage: function(ichat){
         this.datiUtentiChat[ichat].messages.push({
           text: 'ok',
-          status: 'received'
+          status: 'received',
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss")
         });
       },
 
       addTodo: function(chat) {
         this.datiUtentiChat[chat].messages.push({
           text: this.inputChatUtente,
-          status: 'sent'
+          status: 'sent',
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss")
         });
         this.inputChatUtente = "";
-        this.clock = setInterval(this.sendMessage(chat), 1000);
+        this.clock = setTimeout(this.sendMessage(chat), 1000);
       },
 
     }
