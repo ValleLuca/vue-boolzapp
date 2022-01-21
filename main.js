@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
       contatoreChat: null,
       inputChatUtente:"",
+      ricercaInput: "",
       clock: null,
         datiUtentiChat: [
           {
@@ -74,6 +75,13 @@ var app = new Vue({
         ]
 
     },
+
+    updated: function(){
+      this.datiUtentiChat.forEach(element => {
+        element.visible = element.name.toLowerCase().includes(this.ricercaInput.toLowerCase());
+      });
+    },
+
     methods:{
       sceltaChat: function(indice){
         this.contatoreChat = indice;
@@ -95,6 +103,14 @@ var app = new Vue({
         this.inputChatUtente = "";
         this.clock = setTimeout(this.sendMessage(chat), 1000);
       },
-
     }
   })
+
+/*
+ricercaInput: myFunction() {
+  const elmnt = document.getElementById("myDIV");
+  const x = elmnt.scrollLeft;
+  const y = elmnt.scrollTop;
+  document.getElementById("sfondochat") = "Horizontally: " + x + "px<br>Vertically: " + y + "px";
+},
+*/

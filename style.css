@@ -154,7 +154,10 @@ body{
     background-color: lightseagreen;
     min-height: 400px;
     width: auto;
-    position: relative;
+}
+
+#scrollChat{
+    overflow: scroll;
 }
 
 .textOptionH{
@@ -211,7 +214,7 @@ body{
     width: 10%;
 }
 
-.opzioniImputText{
+.opzioniInputText{
     width: 100%;
     border-radius: 25px;
     padding: 10px;
@@ -225,6 +228,7 @@ body{
     display: flex;
     align-items: center;
     align-self: center;
+    justify-content: space-evenly;
 }
 
 .pIcons{

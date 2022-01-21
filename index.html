@@ -39,10 +39,10 @@
                         <!-- ricerca utenti -->
                         <div class="ricercaUtenti clearfix">
                             <div class="pSearchChat">
-                                <input class="opzioniImputText" type="text" placeholder="🔍 Cerca o inizia una nuova chat">
+                                <input class="opzioniInputText" v-model="ricercaInput" placeholder="🔍 Cerca o inizia una nuova chat">
                             </div>
                         </div>
-                        <div v-for="(datiUtente, index) in datiUtentiChat" @click="sceltaChat(index)">
+                        <div v-for="(datiUtente, index) in datiUtentiChat" @click="sceltaChat(index)" v-show="datiUtente.visible">
                             <div class="clearfix bordoChat">
                                 <div class="listaAvatarUtenti padingImg">
                                     <img :src="datiUtente.avatar" class="imgAvatarUtente">  <!--da sistemare-->
@@ -63,13 +63,13 @@
                 <div id="chat">
                     <!-- parte top della chat -->
                     <div id="parteAltaChat">
-                        <div>
+                        <div v-if="contatoreChat != null">
                             <div class="spazioAvatar padingImg">
-                                <img src="img/avatar_1.png" class="imgAvatarUtente">
+                                <img :src="datiUtentiChat[contatoreChat].avatar" class="imgAvatarUtente">
                             </div>
                             <div class="infoUtenteChat">
-                                <h3>pippo</h3>
-                                <p>{{ datiUtentiChat[0].messages.at(-1).date }}</p>
+                                <h3>{{ datiUtentiChat[contatoreChat].name }}</h3>
+                                <p>{{ datiUtentiChat[contatoreChat].messages.at(-1).date }}</p>
                             </div>
                         </div>
                         <div id="opzioniChat">
@@ -93,7 +93,7 @@
                     <!-- chat vera e propria -->
                     
                     <div id="sfondochat">
-                        <div v-if="contatoreChat != null">
+                        <div v-if="contatoreChat != null" id="scrollChat">
                             <div v-for="elemento in datiUtentiChat[contatoreChat].messages">
                                 <div v-if="elemento.status == 'sent'" class="clearfix widthChat">
                                     <div class="chatRight pChat">
@@ -113,7 +113,7 @@
                                 <i class="fa-solid fa-paperclip"></i>
                             </div>
                             <div class="inputCenter">
-                                <input class="opzioniImputText" v-model="inputChatUtente" @keyup.enter="addTodo(contatoreChat)" placeholder="Scrivi un messaggio">
+                                <input class="opzioniInputText" v-model="inputChatUtente" @keyup.enter="addTodo(contatoreChat)" placeholder="Scrivi un messaggio">
                             </div>
                             <div class="sendRight">
                                 <i class="fa-solid fa-microphone"></i>
