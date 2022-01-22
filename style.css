@@ -152,12 +152,13 @@ body{
 
 #sfondochat{
     background-color: lightseagreen;
-    min-height: 400px;
+    min-height: 450px;
     width: auto;
 }
 
 #scrollChat{
-    overflow: scroll;
+    overflow: auto;
+    max-height: 381px;
 }
 
 .textOptionH{

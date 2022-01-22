@@ -61,38 +61,41 @@
                     </div>
                 </div>
                 <div id="chat">
+
                     <!-- parte top della chat -->
-                    <div id="parteAltaChat">
-                        <div v-if="contatoreChat != null">
-                            <div class="spazioAvatar padingImg">
-                                <img :src="datiUtentiChat[contatoreChat].avatar" class="imgAvatarUtente">
-                            </div>
-                            <div class="infoUtenteChat">
-                                <h3>{{ datiUtentiChat[contatoreChat].name }}</h3>
-                                <p>{{ datiUtentiChat[contatoreChat].messages.at(-1).date }}</p>
-                            </div>
-                        </div>
-                        <div id="opzioniChat">
-                            <div class="graficaOpzioniChat">
-                                <div class="pIcons">
-                                    <i class="fa-solid fa-phone"></i>
+                    
+
+                    <!-- chat vera e propria -->
+                    <div id="sfondochat">
+                        <div id="parteAltaChat">
+                            <div v-if="contatoreChat != null">
+                                <div class="spazioAvatar padingImg">
+                                    <img :src="datiUtentiChat[contatoreChat].avatar" class="imgAvatarUtente">
                                 </div>
-                                <div class="pIcons">
-                                    <i class="fa-solid fa-video"></i>
+                                <div class="infoUtenteChat">
+                                    <h3>{{ datiUtentiChat[contatoreChat].name }}</h3>
+                                    <p>{{ datiUtentiChat[contatoreChat].messages.at(-1).date }}</p>
                                 </div>
-                                <div class="pIcons">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </div>
-                                <div class="pIcons">
-                                    <i class="fa-solid fa-ellipsis"></i>
+                                <div id="opzioniChat">
+                                    <div class="graficaOpzioniChat">
+                                        <div class="pIcons">
+                                            <i class="fa-solid fa-phone"></i>
+                                        </div>
+                                        <div class="pIcons">
+                                            <i class="fa-solid fa-video"></i>
+                                        </div>
+                                        <div class="pIcons">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </div>
+                                        <div class="pIcons">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             
                         </div>
-                    </div>
-                    <!-- chat vera e propria -->
-                    
-                    <div id="sfondochat">
                         <div v-if="contatoreChat != null" id="scrollChat">
                             <div v-for="elemento in datiUtentiChat[contatoreChat].messages">
                                 <div v-if="elemento.status == 'sent'" class="clearfix widthChat">
@@ -107,18 +110,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="zonaInputChat clearfix">
-                            <div class="emoticonLeft">
-                                <i class="fa-solid fa-face-grin-wink"></i>
-                                <i class="fa-solid fa-paperclip"></i>
-                            </div>
-                            <div class="inputCenter">
-                                <input class="opzioniInputText" v-model="inputChatUtente" @keyup.enter="addTodo(contatoreChat)" placeholder="Scrivi un messaggio">
-                            </div>
-                            <div class="sendRight">
-                                <i class="fa-solid fa-microphone"></i>
+                        <div v-if="contatoreChat != null">
+                            <div class="zonaInputChat clearfix">
+                                <div class="emoticonLeft">
+                                    <i class="fa-solid fa-face-grin-wink"></i>
+                                    <i class="fa-solid fa-paperclip"></i>
+                                </div>
+                                <div class="inputCenter">
+                                    <input class="opzioniInputText" v-model="inputChatUtente" @keyup.enter="addTodo(contatoreChat)" placeholder="Scrivi un messaggio">
+                                </div>
+                                <div class="sendRight">
+                                    <i class="fa-solid fa-microphone"></i>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
